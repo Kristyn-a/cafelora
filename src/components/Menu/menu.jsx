@@ -2,7 +2,7 @@ import './menu.css';
 import { Drink } from '../Drink/drink';
 import { Layer } from '../Layer/layer';
 
-export const Menu = () => {
+export const Menu = ({ drinks }) => {
   return (
     <section className="menu" id="menu">
       <div className="container">
@@ -10,15 +10,22 @@ export const Menu = () => {
         <p className="menu-intro">
           Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
         </p>
-        <div className="drinks-list"></div>
-        <Drink
-          id={0}
-          name="Espresso"
-          ordered={false}
-          image="https://localhost:4000/assets/cups/espresso.png"
-          layers={[<Layer color="#feeeca" label="mléčná pěna" />]}
-        />
+        <div className="drinks-list">
+          {drinks.map((kava) => (
+            <Drink
+              id={kava.id}
+              name={kava.name}
+              ordered={kava.ordered}
+              layers={kava.layers}
+              image={kava.image}
+            />
+          ))}
+        </div>
 
+        {/* // id={0}
+        // name="Espresso" // ordered={false}
+        // image="https://localhost:4000/assets/cups/espresso.png" // layers=
+        {[<Layer color="#feeeca" label="mléčná pěna" />]} */}
         {/* <div className="drink">
           <div className="drink__product">
             <div className="drink__cup">
