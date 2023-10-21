@@ -1,5 +1,6 @@
 import './menu.css';
 import { Drink } from '../Drink/drink';
+import { Layer } from '../Layer/layer';
 
 export const Menu = () => {
   return (
@@ -15,12 +16,7 @@ export const Menu = () => {
           name="Espresso"
           ordered={false}
           image="https://localhost:4000/assets/cups/espresso.png"
-          layers={[
-            {
-              color: '#613916',
-              label: 'espresso',
-            },
-          ]}
+          layers={[<Layer color="#feeeca" label="mléčná pěna" />]}
         />
 
         {/* <div className="drink">
